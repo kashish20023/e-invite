@@ -8,7 +8,7 @@ function renderTicket(targetElement, data) {
   const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
   const monthIndex = monthNames.indexOf((data.calendar.month || "SEPTEMBER").toUpperCase());
   const validMonthIndex = monthIndex !== -1 ? monthIndex : 8;
-  
+
   const daysInMonth = new Date(year, validMonthIndex + 1, 0).getDate();
   const firstDayOfWeek = new Date(year, validMonthIndex, 1).getDay(); // 0=Sun, 1=Mon, 2=Tue
   const firstDayOffset = (firstDayOfWeek + 6) % 7; // Monday-first grid offset
@@ -56,8 +56,8 @@ function renderTicket(targetElement, data) {
             <!-- Row 1: DATE | TIME -->
             <div class="invitation-bp-row">
               <div class="invitation-bp-cell">
-                <div class="invitation-bp-label">FLIGHT &amp; DATE</div>
-                <div class="invitation-bp-value">${data.details.date}</div>
+                <div class="invitation-bp-label">DATE</div>
+                <div class="invitation-bp-value">${data.calendar.displayDate}</div>
               </div>
               <div class="invitation-bp-vline"></div>
               <div class="invitation-bp-cell">
@@ -69,7 +69,7 @@ function renderTicket(targetElement, data) {
             <!-- Row 2: LOCATION | STAMP -->
             <div class="invitation-bp-row invitation-bp-row--stamp">
               <div class="invitation-bp-cell">
-                <div class="invitation-bp-label">TO DESTINATION</div>
+                <div class="invitation-bp-label">Location</div>
                 <div class="invitation-bp-value">${data.details.location}</div>
               </div>
               <div class="invitation-bp-stamp-wrap">
@@ -123,7 +123,7 @@ function renderTicket(targetElement, data) {
           <div class="invitation-side-notch-right"></div>
           <div class="invitation-location-title">${data.location.title}</div>
           <div class="invitation-location-address">
-            <strong>${data.location.venue}</strong><br/>
+            <strong>${data.location.address}</strong><br/>
           </div>
           <a href="${data.location.mapUrl}" target="_blank" class="invitation-location-btn">${data.location.buttonText}</a>
           <div class="invitation-venue-photo-frame">

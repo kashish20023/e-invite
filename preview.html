@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invitation Preview</title>
   <link rel="stylesheet" href="css/invitation.css">
   <style>
-    /* Hide fingerprint overlay if it ever appears */
-    #fingerprint-intro-overlay { display:none; }
-    body { background:#EAE5D9; font-family:Georgia, "Times New Roman", serif; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+    body {
+      background: #EAE5D9;
+      font-family: Georgia, "Times New Roman", serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
   </style>
 </head>
+
 <body>
   <div id="preview"></div>
 
@@ -40,7 +47,7 @@
       location: {
         title: "Venue",
         venue: "Grand Palace",
-        address: "123 Main St, City",
+        address: "A-103,KGK Lehariya Tower A, Airport Road, Near Jawhar Circle, Jaipur-302017",
         buttonText: "Submit",
         mapUrl: "https://yandex.ru/maps/-/CDu~54kD"
       },
@@ -69,4 +76,5 @@
     document.body.classList.add('studio-active');
   </script>
 </body>
+
 </html>

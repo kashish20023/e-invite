@@ -51,27 +51,17 @@
   }
 
   .page-one {
-    z-index: 2;
-    animation: pageOneOut 1.3s 7.8s cubic-bezier(.7,0,.2,1) both;
+    display: none;
   }
 
   .page-two {
     z-index: 1;
-    opacity: 0;
-    transform: scale(.94);
-    animation: pageTwoIn 1.45s 7.65s cubic-bezier(.16,.8,.2,1) both;
+    opacity: 1;
+    transform: scale(1);
   }
 
-  /* Subtle focus/reveal layers give the flat PDF a cinematic entrance. */
   .wash {
-    position: absolute;
-    z-index: 4;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(105deg, transparent 0 40%, rgba(255,255,255,.78) 49%, transparent 58%);
-    transform: translateX(-120%);
-    animation: sweep 1.7s .35s ease-out both;
-    mix-blend-mode: screen;
+    display: none;
   }
 
   .pink-line {

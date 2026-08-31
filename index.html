@@ -28,19 +28,11 @@
       background: var(--accent-pink);
       margin: 2px auto;
     }
-    #ticket-mask {
-      position: absolute;
-      inset: 0;
-      background: #fff;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      z-index: 10;
-    }
   </style>
 </head>
 <body>
   <main class="stage" aria-label="Ticket Invitation">
     <div id="ticket-mount"></div>
-    <div id="ticket-mask"></div>
   </main>
   <script src="js/invitationData.js"></script>
   <script src="js/invitationRenderer.js"></script>
