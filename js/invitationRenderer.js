@@ -1,6 +1,24 @@
+function formatDisplayDate(dateStr) {
+  if (!dateStr) return '';
+  const str = String(dateStr).trim();
+  const match = str.match(/^(\d{1,2})[-.\/](\d{1,2})[-.\/](\d{4})$/);
+  if (match) {
+    const day = match[1].padStart(2, '0');
+    const monthNum = parseInt(match[2], 10);
+    const year = match[3];
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    if (monthNum >= 1 && monthNum <= 12) {
+      return `${day} ${monthNames[monthNum - 1]} ${year}`;
+    }
+  }
+  return str;
+}
+
 function renderTicket(targetElement, data) {
   const container = typeof targetElement === 'string' ? document.querySelector(targetElement) : targetElement;
   if (!container) return;
+
+  const displayDate = formatDisplayDate(data.calendar.displayDate || (data.details && data.details.date));
 
   // Authentic Calendar days generation for September 2026
   const calendarDays = [];
@@ -57,7 +75,7 @@ function renderTicket(targetElement, data) {
             <div class="invitation-bp-row">
               <div class="invitation-bp-cell">
                 <div class="invitation-bp-label">DATE</div>
-                <div class="invitation-bp-value">${data.calendar.displayDate}</div>
+                <div class="invitation-bp-value">${displayDate}</div>
               </div>
               <div class="invitation-bp-vline"></div>
               <div class="invitation-bp-cell">
@@ -111,7 +129,7 @@ function renderTicket(targetElement, data) {
             <div class="invitation-calendar-day-header">Sun</div>
             ${calendarDays.join('')}
           </div>
-          <div class="invitation-date-footer">${data.calendar.displayDate}</div>
+          <div class="invitation-date-footer">${displayDate}</div>
         </div>
       </div>
 
@@ -144,7 +162,7 @@ function renderTicket(targetElement, data) {
           <div class="invitation-side-notch-right"></div>
           <div class="invitation-detail-block">
             <div class="invitation-detail-label">DATE</div>
-            <div class="invitation-detail-value">${data.calendar.displayDate}</div>
+            <div class="invitation-detail-value">${displayDate}</div>
           </div>
           <div class="invitation-detail-block">
             <div class="invitation-detail-label">TIME</div>

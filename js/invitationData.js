@@ -12,12 +12,12 @@ const invitationData = {
     month: "SEPTEMBER",
     year: 2026,
     weddingDay: 7,
-    displayDate: "07.09.2026",
+    displayDate: "07 Sep 2026",
     highlightDate: 7
   },
   details: {
     title: "DETAILS",
-    date: "9th September 2026",
+    date: "07 Sep 2026",
     time: "11:00 AM - 5:00 PM",
     location: "A-103,KGK Lehariya Tower A, Airport Road, Near Jawhar Circle, Jaipur-302017"
   },
