@@ -144,7 +144,7 @@ function renderTicket(targetElement, data) {
           <div class="invitation-side-notch-right"></div>
           <div class="invitation-detail-block">
             <div class="invitation-detail-label">DATE</div>
-            <div class="invitation-detail-value">${data.details.date}</div>
+            <div class="invitation-detail-value">${data.calendar.displayDate}</div>
           </div>
           <div class="invitation-detail-block">
             <div class="invitation-detail-label">TIME</div>
