@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <circle cx="60" cy="60" r="56" fill="none" stroke="#101A34" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="60" cy="60" r="48" fill="none" stroke="#101A34" stroke-width="1"/>
+  <path id="textPath" d="M 22,60 A 38,38 0 1,1 98,60 A 38,38 0 1,1 22,60" fill="none"/>
+  <text font-family="Georgia, serif" font-size="7.5" font-weight="bold" fill="#101A34" letter-spacing="2">
+    <textPath href="#textPath" startOffset="50%" text-anchor="middle">
+      WEDDING TICKET ★ 21.06.2025
+    </textPath>
+  </text>
+  <!-- Center Airplane -->
+  <path d="M60 42 L64 54 L75 58 L64 61 L63 68 L60 65 L57 68 L56 61 L45 58 L56 54 Z" fill="#101A34"/>
+</svg>

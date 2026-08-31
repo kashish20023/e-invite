@@ -1,0 +1,875 @@
+/* ==========================================================================
+   Continuous Wedding Invitation Stamp-Ticket Scoped CSS System
+   ========================================================================== */
+
+/* Main Layout Wrapper */
+.invitation-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 30px 15px 60px 15px;
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #101A34;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Individual Invitation Column (Strip) */
+.invitation-column {
+  flex: 0 0 350px;
+  width: 350px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 45px rgba(16, 26, 52, 0.15);
+  position: relative;
+  border-radius: 2px;
+}
+
+/* Continuous Section Block */
+.invitation-section {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 28px 24px;
+  margin: 0;
+}
+
+/* Color Variant Themes */
+.invitation-section.theme-cream {
+  background-color: #F4F0E6;
+  color: #101A34;
+}
+
+.invitation-section.theme-navy {
+  background-color: #101A34;
+  color: #F4F0E6;
+}
+
+/* ==========================================================================
+   POSTAGE STAMP PERFORATED EDGES & SIDE CUTOUTS
+   ========================================================================== */
+
+/* Perforated Top Edge (Cream Theme) */
+.invitation-section.perforated-top-cream::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background-image: radial-gradient(circle at 10px 8px, transparent 6px, #F4F0E6 7px);
+  background-size: 20px 16px;
+  background-position: 0 0;
+  z-index: 5;
+}
+
+/* Perforated Bottom Edge (Cream Theme) */
+.invitation-section.perforated-bottom-cream::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background-image: radial-gradient(circle at 10px 8px, transparent 6px, #F4F0E6 7px);
+  background-size: 20px 16px;
+  background-position: 0 0;
+  z-index: 5;
+}
+
+/* Perforated Top Edge (Navy Theme) */
+.invitation-section.perforated-top-navy::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background-image: radial-gradient(circle at 10px 8px, transparent 6px, #101A34 7px);
+  background-size: 20px 16px;
+  background-position: 0 0;
+  z-index: 5;
+}
+
+/* Perforated Bottom Edge (Navy Theme) */
+.invitation-section.perforated-bottom-navy::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background-image: radial-gradient(circle at 10px 8px, transparent 6px, #101A34 7px);
+  background-size: 20px 16px;
+  background-position: 0 0;
+  z-index: 5;
+}
+
+/* Side Circular Cutout Notches */
+.invitation-side-notch-left,
+.invitation-side-notch-right {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #EAE5D9; /* Background page shadow blend */
+  z-index: 10;
+}
+
+.invitation-section.theme-navy .invitation-side-notch-left,
+.invitation-section.theme-navy .invitation-side-notch-right {
+  background-color: #0b1225;
+}
+
+.invitation-side-notch-left {
+  left: -9px;
+  top: -9px;
+}
+
+.invitation-side-notch-right {
+  right: -9px;
+  top: -9px;
+}
+
+/* Horizontal Dashed Perforation Separator */
+.invitation-perforated-divider {
+  width: 100%;
+  height: 1px;
+  border-top: 2px dashed rgba(16, 26, 52, 0.25);
+  margin: 18px 0;
+  position: relative;
+}
+
+.theme-navy .invitation-perforated-divider {
+  border-top-color: rgba(244, 240, 230, 0.3);
+}
+
+/* ==========================================================================
+   LEFT STRIP SECTIONS
+   ========================================================================== */
+
+/* Section 1: Ticket Intro (Cream) */
+.invitation-intro {
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+
+.invitation-intro-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.invitation-airplane-icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 8px;
+  opacity: 0.85;
+}
+
+.invitation-header-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #101A34;
+}
+
+.invitation-globe-wrapper {
+  margin: 14px auto 18px auto;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invitation-globe-wrapper img,
+.invitation-globe-wrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+.invitation-couple-names {
+  font-size: 23px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #101A34;
+}
+
+.invitation-boarding-box {
+  border: 1px solid #101A34;
+  position: relative;
+  padding: 12px;
+  margin-bottom: 22px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.invitation-boarding-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.invitation-boarding-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.invitation-boarding-label {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #555;
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+.invitation-boarding-value {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.invitation-stamp-seal {
+  position: absolute;
+  right: -12px;
+  bottom: -16px;
+  width: 65px;
+  height: 65px;
+  pointer-events: none;
+}
+
+.invitation-dashed-label-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  position: relative;
+}
+
+.invitation-dashed-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #777;
+}
+
+/* Section 2: Welcome (Navy) */
+.invitation-welcome {
+  text-align: center;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.invitation-welcome-title {
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.35;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.invitation-welcome-desc {
+  font-size: 11px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 22px;
+  padding: 0 4px;
+}
+
+.invitation-couple-photo-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.invitation-couple-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.invitation-flight-path {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 18px 0;
+  position: relative;
+}
+
+.invitation-flight-line {
+  width: 120px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Cpath d='M0,10 Q50,0 100,10' fill='none' stroke='%23F4F0E6' stroke-width='1.5' stroke-dasharray='3 3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.invitation-welcome-subtitle {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.invitation-welcome-note {
+  font-size: 10px;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+  margin-bottom: 22px;
+}
+
+/* Section 3: Calendar Block */
+.invitation-calendar-card {
+  background-color: #F4F0E6;
+  color: #101A34;
+  border-radius: 10px;
+  padding: 20px 16px;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.invitation-calendar-month {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.invitation-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px 2px;
+  text-align: center;
+}
+
+.invitation-calendar-day-header {
+  font-size: 9px;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.invitation-calendar-day {
+  font-size: 11px;
+  padding: 4px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invitation-calendar-day.wedding-day {
+  font-weight: bold;
+}
+
+.invitation-heart-icon {
+  position: absolute;
+  bottom: -4px;
+  right: 2px;
+  width: 11px;
+  height: 11px;
+  fill: #E63946;
+}
+
+/* Highlighted date circle — number sits INSIDE the pink circle */
+.invitation-calendar-day.highlight {
+  font-weight: 700;
+  color: var(--paper);
+}
+
+.highlight-day-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--accent-pink);
+  color: var(--paper);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.invitation-date-footer {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-align: center;
+  margin-top: 20px;
+  color: #F4F0E6;
+}
+
+/* ==========================================================================
+   RIGHT STRIP SECTIONS
+   ========================================================================== */
+
+/* ── Boarding Pass Grid (reference image style) ─────────────── */
+.invitation-boarding-info {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* Rotated vertical stub on the left */
+.invitation-boarding-stub {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--paper);
+  background-color: var(--ink);
+  padding: 14px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Main grid */
+.invitation-boarding-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(0,0,0,0.10);
+}
+
+/* Each row */
+.invitation-bp-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+  min-height: 52px;
+}
+
+.invitation-bp-row--stamp {
+  border-bottom: none;
+}
+
+/* Cells */
+.invitation-bp-cell {
+  flex: 1;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Vertical divider between cells */
+.invitation-bp-vline {
+  width: 1px;
+  background: rgba(0,0,0,0.10);
+  flex-shrink: 0;
+}
+
+/* Labels */
+.invitation-bp-label {
+  font-size: 7.5px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+/* Values */
+.invitation-bp-value {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+}
+
+/* Stamp wrapper */
+.invitation-bp-stamp-wrap {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.invitation-bp-stamp {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+/* Tear-off dashed line */
+.invitation-bp-tearline {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  margin: 2px 0;
+  position: relative;
+}
+
+.invitation-bp-tear-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1px solid rgba(0,0,0,0.12);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.invitation-bp-tear-dash {
+  flex: 1;
+  border-top: 1.5px dashed rgba(0,0,0,0.18);
+  margin: 0 2px;
+}
+
+/* Bottom ticket title */
+.invitation-bp-title {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 10px 12px 14px;
+}
+
+
+/* Section 1: Location (Cream) */
+.invitation-location {
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+
+.invitation-location-title {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.invitation-location-address {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.invitation-location-btn {
+  display: inline-block;
+  background-color: #101A34;
+  color: #F4F0E6;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-bottom: 22px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.invitation-location-btn:hover {
+  transform: translateY(-1px);
+  background-color: #1a294d;
+}
+
+.invitation-venue-photo-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.invitation-venue-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Details left section – matches calendar styling */
+.invitation-details-left {
+  padding: 1.4rem;
+  text-align: left;
+}
+
+.invitation-details-left .invitation-details-header {
+  font-family: "Outfit", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+  color: var(--ink);
+}
+
+.invitation-details-left .invitation-details-item {
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+  color: var(--ink);
+}
+
+
+/* ── Details Header Section (pink – mirrors Welcome) ─────────── */
+.invitation-details-header-section {
+  text-align: center;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.invitation-details-title {
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--paper);
+  margin-bottom: 20px;
+}
+
+/* ── Thank You Section ────────────────────────────────────────── */
+.invitation-thankyou-section {
+  text-align: center;
+  padding-top: 28px;
+  padding-bottom: 32px;
+}
+
+.invitation-thankyou-logo {
+  margin-top: 4px;
+}
+
+.invitation-thankyou-logo img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  /* The logo has a white bg — show it cleanly via a rounded card */
+  background: var(--paper);
+  border-radius: 8px;
+  padding: 10px 16px;
+  box-sizing: border-box;
+}
+
+/* ── Details Content Section (white/cream) ───────────────────── */
+.invitation-details-content {
+  text-align: center;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.invitation-detail-block {
+  margin-bottom: 24px;
+}
+
+.invitation-detail-block:last-child {
+  margin-bottom: 0;
+}
+
+.invitation-detail-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--accent-pink);
+  margin-bottom: 6px;
+}
+
+.invitation-detail-value {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.invitation-timing {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.invitation-timing-header-wrap {
+  text-align: center;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.invitation-timing-title {
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.invitation-timing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0 10px;
+}
+
+.invitation-timing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.invitation-timing-label {
+  font-size: 11px;
+  line-height: 1.4;
+  flex: 1;
+  text-align: left;
+  opacity: 0.9;
+}
+
+.invitation-timing-divider-line {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(244, 240, 230, 0.3);
+  margin: 0 16px;
+}
+
+.invitation-timing-time {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  width: 65px;
+  text-align: right;
+}
+
+/* Section 3: Dress Code (Cream) */
+.invitation-dresscode {
+  text-align: center;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.invitation-dresscode-title {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.invitation-dresscode-desc {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+  padding: 0 4px;
+}
+
+.invitation-swatches {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.invitation-swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.invitation-girls-title {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.invitation-girls-photo-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.invitation-girls-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* Mobile Stacked Proportions (up to 768px) */
+@media (max-width: 768px) {
+  .invitation-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 10px 40px 10px;
+  }
+
+  .invitation-column {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* Small Screen Adjustments (320px - 375px) */
+@media (max-width: 375px) {
+  .invitation-section {
+    padding: 24px 18px;
+  }
+
+  .invitation-couple-names {
+    font-size: 20px;
+  }
+
+  .invitation-welcome-title,
+  .invitation-timing-title,
+  .invitation-location-title,
+  .invitation-dresscode-title {
+    font-size: 15px;
+  }
+
+  .invitation-timing-time {
+    font-size: 16px;
+  }
+}

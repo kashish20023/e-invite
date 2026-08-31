@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation Preview</title>
+  <link rel="stylesheet" href="css/invitation.css">
+  <style>
+    /* Hide fingerprint overlay if it ever appears */
+    #fingerprint-intro-overlay { display:none; }
+    body { background:#EAE5D9; font-family:Georgia, "Times New Roman", serif; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+  </style>
+</head>
+<body>
+  <div id="preview"></div>
+
+  <script src="js/invitationRenderer.js"></script>
+  <script>
+    // Minimal English data – copy of invitationData (English version)
+    const invitationData = {
+      header: {
+        title: "WEDDING TICKET",
+        groom: "You are invited",
+        flightNo: "07.09.2026",
+        flightClass: "11:00AM - 05:00PM",
+        destination: "You are invited"
+      },
+      welcome: {
+        title: "Studio i",
+        description: "Every institution once began as an idea. Between the two lies a journey of discovering an identity, pursuing innovation, taking initiative and giving ambition a structure.",
+        subtitle: "Date",
+        note: "At the main celebration of our family"
+      },
+      calendar: {
+        month: "SEPTEMBER",
+        year: 2026,
+        weddingDay: 7,
+        displayDate: "07.09.2026"
+      },
+      location: {
+        title: "Venue",
+        venue: "Grand Palace",
+        address: "123 Main St, City",
+        buttonText: "Submit",
+        mapUrl: "https://yandex.ru/maps/-/CDu~54kD"
+      },
+      timing: {
+        title: "THANK YOU",
+        schedule: [] // empty schedule for now
+      },
+      dressCode: {
+        title: "DRESS CODE",
+        description: "We are excited and preparing for our unforgettable day. Support us with smiles, hugs, and beautiful outfits matching the event palette.",
+        colors: ["#F0ECE3", "#101A34", "#222222"],
+        categoryTitle: "WOMEN"
+      },
+      images: {
+        couple: "images/couple.jpg",
+        location: "images/location.jpg",
+        girls: "images/dress.jpg",
+        globe: "images/globe.svg",
+        stampSeal: "images/stamp_seal.svg",
+        airplane: "images/airplane.svg"
+      }
+    };
+    // Render immediately
+    renderWeddingInvitation('#preview', invitationData);
+    // Ensure body gets the class that reveals the stage
+    document.body.classList.add('studio-active');
+  </script>
+</body>
+</html>

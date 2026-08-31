@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Preview</title>
+  <link rel="stylesheet" href="css/invitation.css">
+  <style>
+    :root {
+      --primary-pink: #e60087;
+      --accent-pink: #ff4f9a;
+      --paper: #ffffff;
+      --ink: #111111;
+    }
+    .invitation-section.theme-cream { background-color: var(--paper); color: var(--ink); }
+    .invitation-section.theme-navy { background-color: var(--primary-pink); color: var(--paper); }
+    .invitation-section.theme-navy .invitation-side-notch-left,
+    .invitation-section.theme-navy .invitation-side-notch-right { background-color: #bf006a; }
+    .invitation-perforated-divider { border-top-color: rgba(255,79,154,0.25); }
+    .invitation-section.perforated-top-cream::before,
+    .invitation-section.perforated-bottom-cream::after { background-image: radial-gradient(circle, transparent 6px, var(--paper) 7px); }
+    .invitation-section.perforated-top-navy::before,
+    .invitation-section.perforated-bottom-navy::after { background-image: radial-gradient(circle, transparent 6px, var(--primary-pink) 7px); }
+    .highlight-circle {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-pink);
+      margin: 2px auto;
+    }
+    #ticket-mask {
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <main class="stage" aria-label="Ticket Invitation">
+    <div id="ticket-mount"></div>
+    <div id="ticket-mask"></div>
+  </main>
+  <script src="js/invitationData.js"></script>
+  <script src="js/invitationRenderer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/highEndRenderer.js"></script>
+</body>
+</html>

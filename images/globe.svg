@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <circle cx="80" cy="80" r="76" fill="none" stroke="#101A34" stroke-width="1.8"/>
+  <!-- Latitudes -->
+  <ellipse cx="80" cy="80" rx="76" ry="25" fill="none" stroke="#101A34" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <ellipse cx="80" cy="80" rx="76" ry="50" fill="none" stroke="#101A34" stroke-width="1.2"/>
+  <line x1="4" y1="80" x2="156" y2="80" stroke="#101A34" stroke-width="1.5"/>
+  <!-- Longitudes -->
+  <line x1="80" y1="4" x2="80" y2="156" stroke="#101A34" stroke-width="1.5"/>
+  <ellipse cx="80" cy="80" rx="28" ry="76" fill="none" stroke="#101A34" stroke-width="1.2"/>
+  <ellipse cx="80" cy="80" rx="54" ry="76" fill="none" stroke="#101A34" stroke-width="1.2"/>
+  <!-- Continents stylized lines -->
+  <path d="M 45 40 Q 65 30 85 45 T 115 40 Q 130 65 110 90 T 70 120 Q 50 100 45 75 Z" fill="none" stroke="#101A34" stroke-width="1" opacity="0.4"/>
+</svg>
