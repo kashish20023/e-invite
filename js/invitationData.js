@@ -1,6 +1,6 @@
 const invitationData = {
   header: {
-    title: "AIRLINES TICKET"
+    title: "STUDIO I TICKET"
   },
   welcome: {
     title: "Welcome",
@@ -19,7 +19,7 @@ const invitationData = {
     title: "DETAILS",
     date: "07 Sep 2026",
     time: "11:00 AM - 5:00 PM",
-    location: "A-103,KGK Lehariya Tower A, Airport Road, Near Jawhar Circle, Jaipur-302017"
+    location: "A-103, KGK Lehariya Tower A, Airport Road, Near Jawhar Circle, Jaipur-302017"
   },
   boarding: {
     title: "BOARDING PASS",
@@ -37,8 +37,8 @@ const invitationData = {
 
   location: {
     title: "Location",
-    location: "A-103,KGK Lehariya Tower A, Airport Road, Near Jawhar Circle, Jaipur-302017",
-    address: "A-103,KGK Lehariya Tower A, Airport Road, Near Jawhar Circle, Jaipur-302017",
+    location: "A-103, KGK Lehariya Tower A, Airport Road, Near Jawhar Circle, Jaipur-302017",
+    address: "A-103, KGK Lehariya Tower A, Airport Road, Near Jawhar Circle, Jaipur-302017",
     buttonText: "Open Map",
     mapUrl: "https://www.google.com/maps/dir//Lehariya+%7C+KGK+Realty,+Airport+Rd,+near+Jawahar+Circle,+Jaipur,+Rajasthan+302017/@26.8852108,75.7905578,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x396db51866a9a711:0x66dbc9fb5ee4430e!2m2!1d75.7965965!2d26.8353147?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
   },
