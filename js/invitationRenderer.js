@@ -111,9 +111,9 @@ function renderTicket(targetElement, data) {
 
               <div class="abp-divider"></div>
 
-              <!-- Passenger Row -->
+              <!-- Runway Row -->
               <div class="abp-passenger-container">
-                <div class="abp-label">PASSENGER</div>
+                <div class="abp-label">RUNWAY</div>
                 <div class="abp-passenger-name">${passenger}</div>
               </div>
 
@@ -155,7 +155,7 @@ function renderTicket(targetElement, data) {
               </div>
               <div class="abp-stub-body">
                 <div class="abp-stub-passenger">
-                  <span class="abp-label">PASSENGER</span>
+                  <span class="abp-label">RUNWAY</span>
                   <span class="abp-stub-name">${passenger}</span>
                 </div>
                 <div class="abp-stub-route">
