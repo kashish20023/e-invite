@@ -1,6 +1,6 @@
 const invitationData = {
   header: {
-    title: "TICKET"
+    title: "AIRLINES TICKET"
   },
   welcome: {
     title: "Welcome",
@@ -22,7 +22,14 @@ const invitationData = {
     location: "A-103,KGK Lehariya Tower A, Airport Road, Near Jawhar Circle, Jaipur-302017"
   },
   boarding: {
-    title: "EVENT TICKET"
+    title: "BOARDING PASS",
+    passenger: "STUDIO I",
+    from: "YOUR CITY",
+    to: "JAIPUR",
+    flight: "SI2026",
+    time: "11:00 AM",
+    date: "07 SEP 2026",
+    notice: "BOARDING GATE CLOSE 10 MINUTES PRIOR TO DEPARTURE TIME"
   },
   thankyou: {
     message: "THANK YOU"

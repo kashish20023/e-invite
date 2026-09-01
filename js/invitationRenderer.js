@@ -43,68 +43,151 @@ function renderTicket(targetElement, data) {
     `);
   }
 
-  // Build the HTML layout – we keep the original two‑column structure but replace wedding‑specific texts.
+  const passenger = (data.boarding && data.boarding.passenger) || "STUDIO I";
+  const fromCity = (data.boarding && data.boarding.from) || "YOUR CITY";
+  const toCity = (data.boarding && data.boarding.to) || "JAIPUR";
+  const flightNo = (data.boarding && data.boarding.flight) || "SI2026";
+  const flightTime = (data.boarding && data.boarding.time) || (data.details && data.details.time) || "11:00 AM";
+  const flightDate = (data.boarding && data.boarding.date) || displayDate || "07 SEP 2026";
+  const noticeText = (data.boarding && data.boarding.notice) || "BOARDING GATE CLOSE 10 MINUTES PRIOR TO DEPARTURE TIME";
+  const headerTitle = (data.header && data.header.title) || "AIRLINES TICKET";
+
+  // Build the HTML layout – we keep the original two‑column structure.
   const html = `
     <div class="invitation-layout">
       <!-- LEFT STRIP -->
       <div class="invitation-column">
-        <div class="invitation-section theme-cream perforated-top-cream perforated-bottom-cream invitation-intro">
-          <div class="invitation-side-notch-left"></div>
-          <div class="invitation-side-notch-right"></div>
-          <div class="invitation-intro-top-bar">
-            <img src="${data.images.airplane}" class="invitation-airplane-icon" alt="Airplane" />
-            <div class="invitation-header-title">${data.header.title}</div>
+        <!-- 1ST TICKET: REAL AIRLINE STYLE BOARDING PASS -->
+        <div class="airline-boarding-pass">
+          <!-- Top Yellow Header Bar -->
+          <div class="abp-header">
+            <div class="abp-header-left">
+              <svg class="abp-plane-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+              </svg>
+              <span class="abp-header-title">${headerTitle}</span>
+            </div>
+            <div class="abp-header-right">
+              <span class="abp-header-stub-title">${(data.boarding && data.boarding.title) || "BOARDING PASS"}</span>
+            </div>
           </div>
-          <div class="invitation-globe-wrapper">
-            <img src="${data.images.globe}" alt="Globe" />
+
+          <!-- Main Body Section -->
+          <div class="abp-body">
+            <!-- Left Vertical Barcode -->
+            <div class="abp-barcode-vertical-container">
+              <div class="abp-barcode-v">
+                <div class="abp-barcode-v-lines"></div>
+                <div class="abp-barcode-v-numbers">0 1 2 3 4 5 6 7 8 9</div>
+              </div>
+            </div>
+
+            <!-- Right Content Area -->
+            <div class="abp-content">
+              <!-- Route Section: FROM -> TO -->
+              <div class="abp-route-container">
+                <div class="abp-city-block abp-from">
+                  <div class="abp-label">FROM</div>
+                  <div class="abp-city-name">${fromCity}</div>
+                </div>
+
+                <div class="abp-flight-path-graphic">
+                  <svg viewBox="0 0 160 40" class="abp-arc-svg">
+                    <path d="M 10 30 Q 80 0 150 30" fill="none" stroke="#222" stroke-width="1.5" stroke-dasharray="4 4"/>
+                    <g transform="translate(25, 10) rotate(-20) scale(0.65)">
+                      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="#222"/>
+                    </g>
+                    <g transform="translate(130, 20) rotate(25) scale(0.65)">
+                      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="#222"/>
+                    </g>
+                  </svg>
+                </div>
+
+                <div class="abp-city-block abp-to">
+                  <div class="abp-label">TO</div>
+                  <div class="abp-city-name">${toCity}</div>
+                </div>
+              </div>
+
+              <div class="abp-divider"></div>
+
+              <!-- Passenger Row -->
+              <div class="abp-passenger-container">
+                <div class="abp-label">PASSENGER</div>
+                <div class="abp-passenger-name">${passenger}</div>
+              </div>
+
+              <div class="abp-divider"></div>
+
+              <!-- Flight Details Grid (3 Columns) -->
+              <div class="abp-details-grid">
+                <div class="abp-detail-col">
+                  <div class="abp-label">FLIGHT</div>
+                  <div class="abp-value">${flightNo}</div>
+                </div>
+                <div class="abp-detail-col">
+                  <div class="abp-label">DATE</div>
+                  <div class="abp-value">${flightDate}</div>
+                </div>
+                <div class="abp-detail-col">
+                  <div class="abp-label">TIME</div>
+                  <div class="abp-value">${flightTime}</div>
+                </div>
+              </div>
+
+              <!-- Notice Subtext -->
+              <div class="abp-notice-text">${noticeText}</div>
+            </div>
           </div>
-        </div>
 
-        <!-- Boarding Pass Info Strip -->
-        <div class="invitation-section theme-cream perforated-top-cream perforated-bottom-cream invitation-boarding-info">
-          <div class="invitation-side-notch-left"></div>
-          <div class="invitation-side-notch-right"></div>
+          <!-- Tear Line / Perforation -->
+          <div class="abp-tear-line">
+            <div class="abp-notch abp-notch-left"></div>
+            <div class="abp-dash"></div>
+            <div class="abp-notch abp-notch-right"></div>
+          </div>
 
-          <!-- Vertical stub label -->
-          <div class="invitation-boarding-stub">EVENT</div>
-
-          <!-- Boarding pass grid -->
-          <div class="invitation-boarding-grid">
-
-            <!-- Row 1: DATE | TIME -->
-            <div class="invitation-bp-row">
-              <div class="invitation-bp-cell">
-                <div class="invitation-bp-label">DATE</div>
-                <div class="invitation-bp-value">${displayDate}</div>
+          <!-- Bottom Stub Section -->
+          <div class="abp-stub-section">
+            <div class="abp-stub-card">
+              <div class="abp-stub-header">
+                ${(data.boarding && data.boarding.title) || "BOARDING PASS"}
               </div>
-              <div class="invitation-bp-vline"></div>
-              <div class="invitation-bp-cell">
-                <div class="invitation-bp-label">TIME</div>
-                <div class="invitation-bp-value">${data.details.time}</div>
+              <div class="abp-stub-body">
+                <div class="abp-stub-passenger">
+                  <span class="abp-label">PASSENGER</span>
+                  <span class="abp-stub-name">${passenger}</span>
+                </div>
+                <div class="abp-stub-route">
+                  <span class="abp-label">FROM</span>
+                  <span class="abp-stub-city">${fromCity}</span>
+                  <svg class="abp-plane-mini" viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                    <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                  </svg>
+                  <span class="abp-label">TO</span>
+                  <span class="abp-stub-city">${toCity}</span>
+                </div>
+                <div class="abp-stub-grid">
+                  <div class="abp-detail-col">
+                    <div class="abp-label">FLIGHT</div>
+                    <div class="abp-value-sm">${flightNo}</div>
+                  </div>
+                  <div class="abp-detail-col">
+                    <div class="abp-label">DATE</div>
+                    <div class="abp-value-sm">${flightDate}</div>
+                  </div>
+                  <div class="abp-detail-col">
+                    <div class="abp-label">TIME</div>
+                    <div class="abp-value-sm">${flightTime}</div>
+                  </div>
+                </div>
+
+                <!-- Horizontal Barcode -->
+                <div class="abp-barcode-horizontal">
+                  <div class="abp-barcode-h-lines"></div>
+                </div>
               </div>
             </div>
-
-            <!-- Row 2: LOCATION | STAMP -->
-            <div class="invitation-bp-row invitation-bp-row--stamp">
-              <div class="invitation-bp-cell">
-                <div class="invitation-bp-label">Location</div>
-                <div class="invitation-bp-value">${data.details.location}</div>
-              </div>
-              <div class="invitation-bp-stamp-wrap">
-                <img src="${data.images.stampSeal}" class="invitation-bp-stamp" alt="Stamp" />
-              </div>
-            </div>
-
-            <!-- Tear-off dashed line -->
-            <div class="invitation-bp-tearline">
-              <div class="invitation-bp-tear-dot left"></div>
-              <div class="invitation-bp-tear-dash"></div>
-              <div class="invitation-bp-tear-dot right"></div>
-            </div>
-
-            <!-- Bottom title -->
-            <div class="invitation-bp-title">${data.boarding.title}</div>
-
           </div>
         </div>
 

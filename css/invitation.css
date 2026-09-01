@@ -46,8 +46,8 @@
 }
 
 .invitation-section.theme-navy {
-  background-color: #101A34;
-  color: #F4F0E6;
+  background-color: #e60087;
+  color: #ffffff;
 }
 
 /* ==========================================================================
@@ -873,3 +873,356 @@
     font-size: 16px;
   }
 }
+
+/* ==========================================================================
+   AUTHENTIC AIRLINE BOARDING PASS TICKET STYLING
+   ========================================================================== */
+
+.airline-boarding-pass {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #111111;
+  position: relative;
+  width: 100%;
+  margin-bottom: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.abp-header {
+  background-color: #e60087;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.abp-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.abp-plane-icon {
+  transform: rotate(45deg);
+}
+
+.abp-header-title {
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.abp-header-right {
+  color: #ffffff;
+}
+
+.abp-header-stub-title {
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.abp-body {
+  display: flex;
+  padding: 16px 14px;
+  position: relative;
+  background: #ffffff;
+}
+
+.abp-barcode-vertical-container {
+  width: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 12px;
+  border-right: 1px solid #EAEAEA;
+  flex-shrink: 0;
+}
+
+.abp-barcode-v {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  max-height: 220px;
+}
+
+.abp-barcode-v-lines {
+  width: 18px;
+  height: 175px;
+  background: repeating-linear-gradient(
+    0deg,
+    #111 0px,
+    #111 2px,
+    transparent 2px,
+    transparent 4px,
+    #111 4px,
+    #111 7px,
+    transparent 7px,
+    transparent 8px,
+    #111 8px,
+    #111 9px,
+    transparent 9px,
+    transparent 12px
+  );
+}
+
+.abp-barcode-v-numbers {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #444;
+}
+
+.abp-content {
+  flex: 1;
+  padding-left: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.abp-route-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.abp-city-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.abp-to {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.abp-label {
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #777777;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.abp-city-name {
+  font-size: 18px;
+  font-weight: 900;
+  color: #111111;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.abp-flight-path-graphic {
+  flex: 1;
+  max-width: 120px;
+  margin: 0 4px;
+}
+
+.abp-arc-svg {
+  width: 100%;
+  height: 34px;
+  overflow: visible;
+}
+
+.abp-divider {
+  height: 1px;
+  background-color: #ECECEC;
+  margin: 8px 0;
+}
+
+.abp-passenger-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.abp-passenger-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.abp-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.abp-detail-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.abp-value {
+  font-size: 11px;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: 0.3px;
+}
+
+.abp-value-sm {
+  font-size: 10px;
+  font-weight: 800;
+  color: #111111;
+}
+
+.abp-notice-text {
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #222222;
+  text-transform: uppercase;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.abp-tear-line {
+  position: relative;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+}
+
+.abp-dash {
+  width: 100%;
+  border-top: 2px dashed #CCCCCC;
+}
+
+.abp-notch {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #EAE5D9;
+  z-index: 5;
+}
+
+.abp-notch-left {
+  left: -9px;
+}
+
+.abp-notch-right {
+  right: -9px;
+}
+
+.abp-stub-section {
+  padding: 0 12px 14px 12px;
+  background: #ffffff;
+}
+
+.abp-stub-card {
+  border: 1px solid #ECECEC;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.abp-stub-header {
+  background-color: #e60087;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 6px 10px;
+  text-transform: uppercase;
+}
+
+.abp-stub-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.abp-stub-passenger {
+  display: flex;
+  flex-direction: column;
+}
+
+.abp-stub-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: #111111;
+  text-transform: uppercase;
+}
+
+.abp-stub-route {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.abp-stub-city {
+  font-size: 11px;
+  font-weight: 800;
+  color: #111111;
+  text-transform: uppercase;
+}
+
+.abp-plane-mini {
+  transform: rotate(90deg);
+  margin: 0 2px;
+}
+
+.abp-stub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.abp-barcode-horizontal {
+  width: 100%;
+  height: 36px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.abp-barcode-h-lines {
+  width: 90%;
+  height: 28px;
+  background: repeating-linear-gradient(
+    90deg,
+    #111 0px,
+    #111 2px,
+    transparent 2px,
+    transparent 4px,
+    #111 4px,
+    #111 7px,
+    transparent 7px,
+    transparent 8px,
+    #111 8px,
+    #111 10px,
+    transparent 10px,
+    transparent 12px,
+    #111 12px,
+    #111 13px,
+    transparent 13px,
+    transparent 15px
+  );
+}
+

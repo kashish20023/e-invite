@@ -12,15 +12,30 @@
       --paper: #ffffff;
       --ink: #111111;
     }
-    .invitation-section.theme-cream { background-color: var(--paper); color: var(--ink); }
-    .invitation-section.theme-navy { background-color: var(--primary-pink); color: var(--paper); }
+    /* WELCOME & DETAILS SECTIONS ARE SLEEK BLACK (#111111) */
+    .invitation-section.theme-navy { background-color: #111111 !important; color: #ffffff !important; }
     .invitation-section.theme-navy .invitation-side-notch-left,
-    .invitation-section.theme-navy .invitation-side-notch-right { background-color: #bf006a; }
-    .invitation-perforated-divider { border-top-color: rgba(255,79,154,0.25); }
+    .invitation-section.theme-navy .invitation-side-notch-right { background-color: #EAE5D9 !important; }
+    .invitation-perforated-divider { border-top-color: rgba(255,255,255,0.25); }
     .invitation-section.perforated-top-cream::before,
     .invitation-section.perforated-bottom-cream::after { background-image: radial-gradient(circle, transparent 6px, var(--paper) 7px); }
     .invitation-section.perforated-top-navy::before,
-    .invitation-section.perforated-bottom-navy::after { background-image: radial-gradient(circle, transparent 6px, var(--primary-pink) 7px); }
+    .invitation-section.perforated-bottom-navy::after { background-image: radial-gradient(circle, transparent 6px, #111111 7px) !important; }
+    
+    /* DETAILS HEADER ALIGNMENT & CENTERING */
+    .invitation-section.invitation-details-header-section {
+      padding: 22px 16px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .invitation-details-header-section .invitation-details-title {
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1 !important;
+      color: #ffffff !important;
+    }
+
     .highlight-circle {
       width: 12px;
       height: 12px;
