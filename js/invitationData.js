@@ -34,6 +34,12 @@ const invitationData = {
   thankyou: {
     message: "THANK YOU"
   },
+  game: {
+    title: "PLAY A GAME",
+    description: "Join us for an exciting interactive game before the event!",
+    buttonText: "PLAY NOW",
+    gameUrl: "https://example.com/game"
+  },
 
   location: {
     title: "Location",

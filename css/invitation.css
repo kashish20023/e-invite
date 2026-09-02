@@ -5,9 +5,9 @@
 /* Main Layout Wrapper */
 .invitation-layout {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 32px;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
   width: 100%;
   max-width: 880px;
   margin: 0 auto;
@@ -20,9 +20,8 @@
 
 /* Individual Invitation Column (Strip) */
 .invitation-column {
-  flex: 0 0 350px;
-  width: 350px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 15px 45px rgba(16, 26, 52, 0.15);
@@ -117,7 +116,8 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: #EAE5D9; /* Background page shadow blend */
+  background-color: #EAE5D9;
+  /* Background page shadow blend */
   z-index: 10;
 }
 
@@ -293,6 +293,35 @@
   padding: 0 4px;
 }
 
+/* Game Section */
+.invitation-game {
+  text-align: center;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.invitation-game-btn {
+  display: inline-block;
+  background-color: #e60087;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 4px;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 79, 154, 0.35);
+}
+
+.invitation-game-btn:hover {
+  transform: translateY(-2px);
+  background-color: #e60087;
+  box-shadow: 0 6px 16px rgba(255, 79, 154, 0.5);
+}
+
 .invitation-couple-photo-frame {
   width: 100%;
   aspect-ratio: 1 / 1.05;
@@ -342,12 +371,21 @@
 
 /* Section 3: Calendar Block */
 .invitation-calendar-card {
-  background-color: #F4F0E6;
+  background-color: #ffffff;
   color: #101A34;
   border-radius: 10px;
   padding: 20px 16px;
   margin-top: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Override perforated edges for calendar card to match white background */
+.invitation-calendar-card.perforated-top-cream::before {
+  background-image: radial-gradient(circle at 10px 8px, transparent 6px, #ffffff 7px);
+}
+
+.invitation-calendar-card.perforated-bottom-cream::after {
+  background-image: radial-gradient(circle at 10px 8px, transparent 6px, #ffffff 7px);
 }
 
 .invitation-calendar-month {
@@ -460,7 +498,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  border-left: 1px solid rgba(0,0,0,0.10);
+  border-left: 1px solid rgba(0, 0, 0, 0.10);
 }
 
 /* Each row */
@@ -468,7 +506,7 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  border-bottom: 1px solid rgba(0,0,0,0.10);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
   min-height: 52px;
 }
 
@@ -488,7 +526,7 @@
 /* Vertical divider between cells */
 .invitation-bp-vline {
   width: 1px;
-  background: rgba(0,0,0,0.10);
+  background: rgba(0, 0, 0, 0.10);
   flex-shrink: 0;
 }
 
@@ -541,7 +579,7 @@
   height: 10px;
   border-radius: 50%;
   background: var(--paper);
-  border: 1px solid rgba(0,0,0,0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   flex-shrink: 0;
   position: relative;
   z-index: 1;
@@ -549,7 +587,7 @@
 
 .invitation-bp-tear-dash {
   flex: 1;
-  border-top: 1.5px dashed rgba(0,0,0,0.18);
+  border-top: 1.5px dashed rgba(0, 0, 0, 0.18);
   margin: 0 2px;
 }
 
@@ -879,7 +917,7 @@
    ========================================================================== */
 
 .airline-boarding-pass {
-  background: #ffffff;
+  background: #F4F0E6;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   overflow: hidden;
@@ -904,7 +942,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #ffffff;
+  color: #F4F0E6;
 }
 
 .abp-plane-icon {
@@ -933,7 +971,7 @@
   display: flex;
   padding: 16px 14px;
   position: relative;
-  background: #ffffff;
+  background: #F4F0E6;
 }
 
 .abp-barcode-vertical-container {
@@ -959,21 +997,19 @@
 .abp-barcode-v-lines {
   width: 18px;
   height: 175px;
-  background: repeating-linear-gradient(
-    0deg,
-    #111 0px,
-    #111 2px,
-    transparent 2px,
-    transparent 4px,
-    #111 4px,
-    #111 7px,
-    transparent 7px,
-    transparent 8px,
-    #111 8px,
-    #111 9px,
-    transparent 9px,
-    transparent 12px
-  );
+  background: repeating-linear-gradient(0deg,
+      #111 0px,
+      #111 2px,
+      transparent 2px,
+      transparent 4px,
+      #111 4px,
+      #111 7px,
+      transparent 7px,
+      transparent 8px,
+      #111 8px,
+      #111 9px,
+      transparent 9px,
+      transparent 12px);
 }
 
 .abp-barcode-v-numbers {
@@ -1100,7 +1136,7 @@
   height: 18px;
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background: #000000;
 }
 
 .abp-dash {
@@ -1127,19 +1163,19 @@
 
 .abp-stub-section {
   padding: 0 12px 14px 12px;
-  background: #ffffff;
+  background: #F4F0E6;
 }
 
 .abp-stub-card {
   border: 1px solid #ECECEC;
   border-radius: 10px;
   overflow: hidden;
-  background: #ffffff;
+  background: #F4F0E6;
 }
 
 .abp-stub-header {
   background-color: #e60087;
-  color: #ffffff;
+  color: #F4F0E6;
   font-weight: 800;
   font-size: 11px;
   letter-spacing: 1px;
@@ -1205,24 +1241,21 @@
 .abp-barcode-h-lines {
   width: 90%;
   height: 28px;
-  background: repeating-linear-gradient(
-    90deg,
-    #111 0px,
-    #111 2px,
-    transparent 2px,
-    transparent 4px,
-    #111 4px,
-    #111 7px,
-    transparent 7px,
-    transparent 8px,
-    #111 8px,
-    #111 10px,
-    transparent 10px,
-    transparent 12px,
-    #111 12px,
-    #111 13px,
-    transparent 13px,
-    transparent 15px
-  );
+  background: repeating-linear-gradient(90deg,
+      #111 0px,
+      #111 2px,
+      transparent 2px,
+      transparent 4px,
+      #111 4px,
+      #111 7px,
+      transparent 7px,
+      transparent 8px,
+      #111 8px,
+      #111 10px,
+      transparent 10px,
+      transparent 12px,
+      #111 12px,
+      #111 13px,
+      transparent 13px,
+      transparent 15px);
 }
-
