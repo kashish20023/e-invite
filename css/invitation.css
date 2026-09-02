@@ -29,6 +29,13 @@
   border-radius: 2px;
 }
 
+/* Desktop override for wider columns */
+@media (min-width: 768px) {
+  .invitation-column {
+    max-width: 500px;
+  }
+}
+
 /* Continuous Section Block */
 .invitation-section {
   position: relative;
