@@ -53,19 +53,19 @@ function renderTicket(targetElement, data) {
   const headerTitle = (data.header && data.header.title) || "AIRLINES TICKET";
 
   // Pre-build conditional sections (avoids nested backtick conflicts)
-  // var gameSectionHtml = '';
-  // if (data.game) {
-  //   var gameBtnHtml = data.game.gameUrl
-  //     ? '<a href="' + data.game.gameUrl + '" target="_blank" class="invitation-game-btn">' + (data.game.buttonText || 'PLAY NOW') + '</a>'
-  //     : '';
-  //   gameSectionHtml = '<div class="invitation-section theme-navy perforated-top-navy perforated-bottom-navy invitation-game">' +
-  //     '<div class="invitation-side-notch-left"></div>' +
-  //     '<div class="invitation-side-notch-right"></div>' +
-  //     '<div class="invitation-welcome-title">' + (data.game.title || 'PLAY A GAME') + '</div>' +
-  //     '<div class="invitation-welcome-desc">' + (data.game.description || '') + '</div>' +
-  //     gameBtnHtml +
-  //     '</div>';
-  // }
+  var gameSectionHtml = '';
+  if (data.game) {
+    var gameBtnHtml = data.game.gameUrl
+      ? '<a href="' + data.game.gameUrl + '" target="_blank" class="invitation-game-btn">' + (data.game.buttonText || 'PLAY NOW') + '</a>'
+      : '';
+    gameSectionHtml = '<div class="invitation-section theme-navy perforated-top-navy perforated-bottom-navy invitation-game">' +
+      '<div class="invitation-side-notch-left"></div>' +
+      '<div class="invitation-side-notch-right"></div>' +
+      '<div class="invitation-welcome-title">' + (data.game.title || 'PLAY A GAME') + '</div>' +
+      '<div class="invitation-welcome-desc">' + (data.game.description || '') + '</div>' +
+      gameBtnHtml +
+      '</div>';
+  }
 
   // Build the HTML layout – we keep the original two‑column structure.
   const html = `
@@ -233,8 +233,8 @@ function renderTicket(targetElement, data) {
 
       <!-- RIGHT STRIP -->
       <div class="invitation-column">
-        <!-- Play A Game Section 
-        {gameSectionHtml} -->
+        <!-- Play A Game Section -->
+        ${gameSectionHtml} 
 
         <!-- Location Section -->
         <div class="invitation-section theme-cream perforated-top-cream perforated-bottom-cream invitation-location">

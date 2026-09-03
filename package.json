@@ -1,0 +1,9 @@
+{
+  "name": "e-invite",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx --yes http-server -p 8085",
+    "start": "npx --yes http-server -p 8085"
+  }
+}

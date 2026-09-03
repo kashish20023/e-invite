@@ -38,7 +38,7 @@ const invitationData = {
     title: "PLAY A GAME",
     description: "Join us for an exciting interactive game before the event!",
     buttonText: "PLAY NOW",
-    gameUrl: "https://example.com/game"
+    gameUrl: "https://game.studioi.in"
   },
 
   location: {
